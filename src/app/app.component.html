@@ -1,5 +1,5 @@
 
-<!-- Angular 7 practice concepts -->
+<!-- Angular 7 practice basic concepts -->
 
 <!-- 
 <div class="container">
@@ -12,7 +12,22 @@
     </div>
 </div> -->
 
-<app-header></app-header>
+<!-- Component Data binding concepts -->
+
+<div class="container">
+    <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)">
+    </app-cockpit>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+          <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"></app-server-element>
+      </div>
+    </div>
+</div>
+
+<!-- Recipe shopping list project -->
+
+<!-- <app-header></app-header>
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -20,4 +35,4 @@
             <app-shopping-list></app-shopping-list>
         </div>
     </div>
-</div>
+</div> -->
