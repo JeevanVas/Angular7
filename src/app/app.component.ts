@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  loadedFeature = "recipe";
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
+
+  // Component and Data binding deep dive
   serverElements = [{type: "server", name: "test server", content: "test server content"}];
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
