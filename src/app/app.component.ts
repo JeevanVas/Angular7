@@ -13,7 +13,7 @@ export class AppComponent {
   }
 
   // Component and Data binding deep dive
-  serverElements = [{type: "server", name: "test server", content: "test server content"}];
+  /* serverElements = [{type: "server", name: "test server", content: "test server content"}];
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
@@ -37,6 +37,13 @@ export class AppComponent {
 
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
-  }
+  } */
+
+  // Directives related code
+  //numbers = [1, 2, 3, 4, 5];
+  oddNumbers = [1, 3, 5];
+  evenNumbers = [2, 4];
+  onlyOdd = false; 
+  value = 100; 
 
 }

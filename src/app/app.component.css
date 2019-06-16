@@ -2,6 +2,10 @@
   margin-top: 30px;
 }
 
-p {
+/* p {
   color: blue;
+} */
+
+.odd {
+  color: red;
 }
