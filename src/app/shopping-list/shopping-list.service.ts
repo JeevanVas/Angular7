@@ -17,4 +17,17 @@ export class ShoppingListService {
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredients(ingredients: Ingredient[]) {
+        /*for(let ingredient of ingredients) {
+            this.addIngredient(ingredient);
+        } */
+        // The above approach can also be used. The events emits multiple times in 'addIngredient' function
+        // Hence we use below method
+
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+        // We use ES6 feature spread operator(...) to turn the array of elements to list of elements.
+        // Because the push method here is not able to handle array
+    }
 }
