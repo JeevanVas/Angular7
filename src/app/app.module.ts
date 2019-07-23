@@ -25,6 +25,9 @@ import { AccountComponent } from './account/account.component';
 import { AccountsService } from './accounts.service';
 import { LoggingService } from './logging.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +48,15 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     UnlessDirective,
     DropdownDirective,
     NewAccountComponent,
-    AccountComponent
+    AccountComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [AccountsService, LoggingService, ShoppingListService],
   bootstrap: [AppComponent]

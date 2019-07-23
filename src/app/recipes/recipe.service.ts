@@ -37,6 +37,10 @@ export class RecipeService {
         return this.recipes.slice(); //slice() is used to return the copy of 'recipes' array. Hence we can't access the array directly from outside.
     }    
 
+    getRecipe(index: number) {
+        return this.recipes[index];
+    }
+
     addingIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.slService.addIngredients(ingredients);
     }
