@@ -1,8 +1,11 @@
-import { Ingredient } from '../shared/ingredient.model';
 import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
+
+import { Ingredient } from '../shared/ingredient.model';
 
 export class ShoppingListService {
-    ingredientsChanged = new EventEmitter<Ingredient[]>();
+    // ingredientsChanged = new EventEmitter<Ingredient[]>();
+    ingredientsChanged = new Subject<Ingredient[]>();
 
     private ingredients: Ingredient[] = [
         new Ingredient('Tomatoes', 5),
@@ -15,7 +18,8 @@ export class ShoppingListService {
 
     addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        // this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
     }
 
     addIngredients(ingredients: Ingredient[]) {
@@ -26,7 +30,8 @@ export class ShoppingListService {
         // Hence we use below method
 
         this.ingredients.push(...ingredients);
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        // this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
         // We use ES6 feature spread operator(...) to turn the array of elements to list of elements.
         // Because the push method here is not able to handle array
     }

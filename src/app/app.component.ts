@@ -8,11 +8,11 @@ import { AccountsService } from './accounts.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  loadedFeature = "recipe";
+  // loadedFeature = "recipe";
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+  // onNavigate(feature: string) {
+  //   this.loadedFeature = feature;
+  // }
 
   // Component and Data binding deep dive
   /* serverElements = [{type: "server", name: "test server", content: "test server content"}];
